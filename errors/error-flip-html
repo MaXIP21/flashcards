@@ -1,0 +1,488 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="JsFsA8hQPj5gLGPlJ5j9KIfRMLNAxRrBptAvMjv9">
+
+        <title>Laravel</title>
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.bunny.net">
+        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+
+        <!-- Scripts -->
+        <script>
+            // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+            if (localStorage.getItem('darkMode') === 'true' || (!('darkMode' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+              document.documentElement.classList.add('dark')
+            } else {
+              document.documentElement.classList.remove('dark')
+            }
+        </script>
+        <link rel="preload" as="style" href="https://laradev2.peterbacsai.com/build/assets/app-B4Qi55n8.css" /><link rel="modulepreload" href="https://laradev2.peterbacsai.com/build/assets/app-DaBYqt0m.js" /><link rel="stylesheet" href="https://laradev2.peterbacsai.com/build/assets/app-B4Qi55n8.css" /><script type="module" src="https://laradev2.peterbacsai.com/build/assets/app-DaBYqt0m.js"></script>    </head>
+    <body class="font-sans antialiased">
+        <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
+            <nav x-data="{ open: false }" class="bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700">
+    <!-- Primary Navigation Menu -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+            <div class="flex">
+                <!-- Logo -->
+                <div class="shrink-0 flex items-center">
+                    <a href="https://laradev2.peterbacsai.com/dashboard">
+                        <svg viewBox="0 0 316 316" xmlns="http://www.w3.org/2000/svg" class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200">
+    <path d="M305.8 81.125C305.77 80.995 305.69 80.885 305.65 80.755C305.56 80.525 305.49 80.285 305.37 80.075C305.29 79.935 305.17 79.815 305.07 79.685C304.94 79.515 304.83 79.325 304.68 79.175C304.55 79.045 304.39 78.955 304.25 78.845C304.09 78.715 303.95 78.575 303.77 78.475L251.32 48.275C249.97 47.495 248.31 47.495 246.96 48.275L194.51 78.475C194.33 78.575 194.19 78.725 194.03 78.845C193.89 78.955 193.73 79.045 193.6 79.175C193.45 79.325 193.34 79.515 193.21 79.685C193.11 79.815 192.99 79.935 192.91 80.075C192.79 80.285 192.71 80.525 192.63 80.755C192.58 80.875 192.51 80.995 192.48 81.125C192.38 81.495 192.33 81.875 192.33 82.265V139.625L148.62 164.795V52.575C148.62 52.185 148.57 51.805 148.47 51.435C148.44 51.305 148.36 51.195 148.32 51.065C148.23 50.835 148.16 50.595 148.04 50.385C147.96 50.245 147.84 50.125 147.74 49.995C147.61 49.825 147.5 49.635 147.35 49.485C147.22 49.355 147.06 49.265 146.92 49.155C146.76 49.025 146.62 48.885 146.44 48.785L93.99 18.585C92.64 17.805 90.98 17.805 89.63 18.585L37.18 48.785C37 48.885 36.86 49.035 36.7 49.155C36.56 49.265 36.4 49.355 36.27 49.485C36.12 49.635 36.01 49.825 35.88 49.995C35.78 50.125 35.66 50.245 35.58 50.385C35.46 50.595 35.38 50.835 35.3 51.065C35.25 51.185 35.18 51.305 35.15 51.435C35.05 51.805 35 52.185 35 52.575V232.235C35 233.795 35.84 235.245 37.19 236.025L142.1 296.425C142.33 296.555 142.58 296.635 142.82 296.725C142.93 296.765 143.04 296.835 143.16 296.865C143.53 296.965 143.9 297.015 144.28 297.015C144.66 297.015 145.03 296.965 145.4 296.865C145.5 296.835 145.59 296.775 145.69 296.745C145.95 296.655 146.21 296.565 146.45 296.435L251.36 236.035C252.72 235.255 253.55 233.815 253.55 232.245V174.885L303.81 145.945C305.17 145.165 306 143.725 306 142.155V82.265C305.95 81.875 305.89 81.495 305.8 81.125ZM144.2 227.205L100.57 202.515L146.39 176.135L196.66 147.195L240.33 172.335L208.29 190.625L144.2 227.205ZM244.75 114.995V164.795L226.39 154.225L201.03 139.625V89.825L219.39 100.395L244.75 114.995ZM249.12 57.105L292.81 82.265L249.12 107.425L205.43 82.265L249.12 57.105ZM114.49 184.425L96.13 194.995V85.305L121.49 70.705L139.85 60.135V169.815L114.49 184.425ZM91.76 27.425L135.45 52.585L91.76 77.745L48.07 52.585L91.76 27.425ZM43.67 60.135L62.03 70.705L87.39 85.305V202.545V202.555V202.565C87.39 202.735 87.44 202.895 87.46 203.055C87.49 203.265 87.49 203.485 87.55 203.695V203.705C87.6 203.875 87.69 204.035 87.76 204.195C87.84 204.375 87.89 204.575 87.99 204.745C87.99 204.745 87.99 204.755 88 204.755C88.09 204.905 88.22 205.035 88.33 205.175C88.45 205.335 88.55 205.495 88.69 205.635L88.7 205.645C88.82 205.765 88.98 205.855 89.12 205.965C89.28 206.085 89.42 206.225 89.59 206.325C89.6 206.325 89.6 206.325 89.61 206.335C89.62 206.335 89.62 206.345 89.63 206.345L139.87 234.775V285.065L43.67 229.705V60.135ZM244.75 229.705L148.58 285.075V234.775L219.8 194.115L244.75 179.875V229.705ZM297.2 139.625L253.49 164.795V114.995L278.85 100.395L297.21 89.825V139.625H297.2Z"/>
+</svg>
+                    </a>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <a class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out" href="https://laradev2.peterbacsai.com/dashboard">
+    Dashboard
+</a>
+                </div>
+            </div>
+
+            <!-- Settings Dropdown -->
+            <div class="hidden sm:flex sm:items-center sm:ms-6">
+                <div x-data="darkMode()" class="mr-4">
+                    <button @click="toggle()" class="p-2 rounded-full text-gray-500 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                        <svg x-show="!isDarkMode" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                        <svg x-show="isDarkMode" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="relative" x-data="{ open: false }" @click.outside="open = false" @close.stop="open = false">
+    <div @click="open = ! open">
+        <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150">
+                            <div>Viki</div>
+
+                            <div class="ms-1">
+                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                        </button>
+    </div>
+
+    <div x-show="open"
+            x-transition:enter="transition ease-out duration-200"
+            x-transition:enter-start="opacity-0 scale-95"
+            x-transition:enter-end="opacity-100 scale-100"
+            x-transition:leave="transition ease-in duration-75"
+            x-transition:leave-start="opacity-100 scale-100"
+            x-transition:leave-end="opacity-0 scale-95"
+            class="absolute z-50 mt-2 w-48 rounded-md shadow-lg ltr:origin-top-right rtl:origin-top-left end-0"
+            style="display: none;"
+            @click="open = false">
+        <div class="rounded-md ring-1 ring-black ring-opacity-5 py-1 bg-white">
+            <a class="block w-full px-4 py-2 text-start text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out" href="https://laradev2.peterbacsai.com/profile">Profile</a>
+
+                        <!-- Authentication -->
+                        <form method="POST" action="https://laradev2.peterbacsai.com/logout">
+                            <input type="hidden" name="_token" value="JsFsA8hQPj5gLGPlJ5j9KIfRMLNAxRrBptAvMjv9" autocomplete="off">
+                            <a class="block w-full px-4 py-2 text-start text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out" href="https://laradev2.peterbacsai.com/logout" onclick="event.preventDefault();
+                                                this.closest('form').submit();">Log Out</a>
+                        </form>
+        </div>
+    </div>
+</div>
+            </div>
+
+            <!-- Hamburger -->
+            <div class="-me-2 flex items-center sm:hidden">
+                <button @click="open = ! open" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 dark:text-gray-500 hover:text-gray-500 dark:hover:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-900 focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-900 focus:text-gray-500 dark:focus:text-gray-400 transition duration-150 ease-in-out">
+                    <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                        <path :class="{'hidden': open, 'inline-flex': ! open }" class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        <path :class="{'hidden': ! open, 'inline-flex': open }" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Responsive Navigation Menu -->
+    <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
+        <div class="pt-2 pb-3 space-y-1">
+            <a class="block w-full ps-3 pe-4 py-2 border-l-4 border-transparent text-start text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition duration-150 ease-in-out" href="https://laradev2.peterbacsai.com/dashboard">
+    Dashboard
+</a>
+        </div>
+
+        <!-- Responsive Settings Options -->
+        <div class="pt-4 pb-1 border-t border-gray-200 dark:border-gray-600">
+            <div class="px-4">
+                <div class="font-medium text-base text-gray-800 dark:text-gray-200">Viki</div>
+                <div class="font-medium text-sm text-gray-500 dark:text-gray-400"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4d3b242639223f242c0d2f2c2e3e2c24632e2220">[email&#160;protected]</a></div>
+            </div>
+
+            <div class="mt-3 space-y-1">
+                <a class="block w-full ps-3 pe-4 py-2 border-l-4 border-transparent text-start text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition duration-150 ease-in-out" href="https://laradev2.peterbacsai.com/profile">
+    Profile
+</a>
+
+                <!-- Authentication -->
+                <form method="POST" action="https://laradev2.peterbacsai.com/logout">
+                    <input type="hidden" name="_token" value="JsFsA8hQPj5gLGPlJ5j9KIfRMLNAxRrBptAvMjv9" autocomplete="off">
+                    <a class="block w-full ps-3 pe-4 py-2 border-l-4 border-transparent text-start text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition duration-150 ease-in-out" href="https://laradev2.peterbacsai.com/logout" onclick="event.preventDefault();
+                                        this.closest('form').submit();">
+    Log Out
+</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</nav>
+
+            <!-- Page Heading -->
+                            <header class="bg-white dark:bg-gray-800 shadow">
+                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                        <div class="flex justify-between items-center">
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                Practice: Viki teszt set
+            </h2>
+            <div class="space-x-2">
+                <button @click="shuffleCards()" class="inline-flex items-center px-4 py-2 bg-blue-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-blue-700 focus:bg-blue-700 active:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition ease-in-out duration-150">
+                    Shuffle
+                </button>
+                <button @click="restartPractice()" class="inline-flex items-center px-4 py-2 bg-yellow-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-yellow-700 focus:bg-yellow-700 active:bg-yellow-800 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 transition ease-in-out duration-150">
+                    Restart
+                </button>
+                <form action="https://laradev2.peterbacsai.com/practice/3/exit" method="POST" class="inline-block">
+                    <input type="hidden" name="_token" value="JsFsA8hQPj5gLGPlJ5j9KIfRMLNAxRrBptAvMjv9" autocomplete="off">                    <button type="submit" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150">
+                        Exit
+                    </button>
+                </form>
+            </div>
+        </div>
+                    </div>
+                </header>
+            
+            <!-- Page Content -->
+            <main>
+                <div class="py-12" x-data="practiceSession({ flashcards: [{&quot;id&quot;:88,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;the&quot;,&quot;target_word&quot;:&quot;el&quot;,&quot;position&quot;:1,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:89,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;be&quot;,&quot;target_word&quot;:&quot;ser&quot;,&quot;position&quot;:2,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:90,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;to&quot;,&quot;target_word&quot;:&quot;a&quot;,&quot;position&quot;:3,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:91,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;of&quot;,&quot;target_word&quot;:&quot;de&quot;,&quot;position&quot;:4,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:92,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;and&quot;,&quot;target_word&quot;:&quot;y&quot;,&quot;position&quot;:5,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:93,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;a&quot;,&quot;target_word&quot;:&quot;un&quot;,&quot;position&quot;:6,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:94,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;in&quot;,&quot;target_word&quot;:&quot;en&quot;,&quot;position&quot;:7,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:95,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;that&quot;,&quot;target_word&quot;:&quot;que&quot;,&quot;position&quot;:8,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:96,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;have&quot;,&quot;target_word&quot;:&quot;tener&quot;,&quot;position&quot;:9,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:97,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;I&quot;,&quot;target_word&quot;:&quot;yo&quot;,&quot;position&quot;:10,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:98,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;it&quot;,&quot;target_word&quot;:&quot;\u00e9l&quot;,&quot;position&quot;:11,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:99,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;for&quot;,&quot;target_word&quot;:&quot;para&quot;,&quot;position&quot;:12,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:100,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;not&quot;,&quot;target_word&quot;:&quot;no&quot;,&quot;position&quot;:13,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:101,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;on&quot;,&quot;target_word&quot;:&quot;en&quot;,&quot;position&quot;:14,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:102,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;with&quot;,&quot;target_word&quot;:&quot;con&quot;,&quot;position&quot;:15,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:103,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;he&quot;,&quot;target_word&quot;:&quot;\u00e9l&quot;,&quot;position&quot;:16,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:104,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;as&quot;,&quot;target_word&quot;:&quot;como&quot;,&quot;position&quot;:17,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:105,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;you&quot;,&quot;target_word&quot;:&quot;t\u00fa&quot;,&quot;position&quot;:18,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:106,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;do&quot;,&quot;target_word&quot;:&quot;hacer&quot;,&quot;position&quot;:19,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:107,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;at&quot;,&quot;target_word&quot;:&quot;en&quot;,&quot;position&quot;:20,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:108,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;this&quot;,&quot;target_word&quot;:&quot;este&quot;,&quot;position&quot;:21,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:109,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;but&quot;,&quot;target_word&quot;:&quot;pero&quot;,&quot;position&quot;:22,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:110,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;his&quot;,&quot;target_word&quot;:&quot;su&quot;,&quot;position&quot;:23,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:111,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;by&quot;,&quot;target_word&quot;:&quot;por&quot;,&quot;position&quot;:24,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:112,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;from&quot;,&quot;target_word&quot;:&quot;de&quot;,&quot;position&quot;:25,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:113,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;they&quot;,&quot;target_word&quot;:&quot;ellos&quot;,&quot;position&quot;:26,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:114,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;we&quot;,&quot;target_word&quot;:&quot;nosotros&quot;,&quot;position&quot;:27,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:115,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;say&quot;,&quot;target_word&quot;:&quot;decir&quot;,&quot;position&quot;:28,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:116,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;her&quot;,&quot;target_word&quot;:&quot;su&quot;,&quot;position&quot;:29,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:117,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;she&quot;,&quot;target_word&quot;:&quot;ella&quot;,&quot;position&quot;:30,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:118,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;or&quot;,&quot;target_word&quot;:&quot;o&quot;,&quot;position&quot;:31,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:119,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;an&quot;,&quot;target_word&quot;:&quot;un&quot;,&quot;position&quot;:32,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:120,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;will&quot;,&quot;target_word&quot;:&quot;voluntad&quot;,&quot;position&quot;:33,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:121,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;my&quot;,&quot;target_word&quot;:&quot;mi&quot;,&quot;position&quot;:34,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:122,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;one&quot;,&quot;target_word&quot;:&quot;uno&quot;,&quot;position&quot;:35,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:123,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;all&quot;,&quot;target_word&quot;:&quot;todo&quot;,&quot;position&quot;:36,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:124,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;would&quot;,&quot;target_word&quot;:&quot;har\u00eda&quot;,&quot;position&quot;:37,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:125,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;there&quot;,&quot;target_word&quot;:&quot;all\u00ed&quot;,&quot;position&quot;:38,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:126,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;their&quot;,&quot;target_word&quot;:&quot;su&quot;,&quot;position&quot;:39,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:127,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;what&quot;,&quot;target_word&quot;:&quot;qu\u00e9&quot;,&quot;position&quot;:40,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:128,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;so&quot;,&quot;target_word&quot;:&quot;as\u00ed&quot;,&quot;position&quot;:41,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:129,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;up&quot;,&quot;target_word&quot;:&quot;arriba&quot;,&quot;position&quot;:42,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:130,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;out&quot;,&quot;target_word&quot;:&quot;fuera&quot;,&quot;position&quot;:43,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:131,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;if&quot;,&quot;target_word&quot;:&quot;si&quot;,&quot;position&quot;:44,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:132,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;about&quot;,&quot;target_word&quot;:&quot;sobre&quot;,&quot;position&quot;:45,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:133,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;who&quot;,&quot;target_word&quot;:&quot;qui\u00e9n&quot;,&quot;position&quot;:46,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:134,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;get&quot;,&quot;target_word&quot;:&quot;obtener&quot;,&quot;position&quot;:47,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:135,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;which&quot;,&quot;target_word&quot;:&quot;cu\u00e1l&quot;,&quot;position&quot;:48,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:136,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;go&quot;,&quot;target_word&quot;:&quot;ir&quot;,&quot;position&quot;:49,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:137,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;me&quot;,&quot;target_word&quot;:&quot;me&quot;,&quot;position&quot;:50,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:138,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;when&quot;,&quot;target_word&quot;:&quot;cu\u00e1ndo&quot;,&quot;position&quot;:51,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:139,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;make&quot;,&quot;target_word&quot;:&quot;hacer&quot;,&quot;position&quot;:52,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:140,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;can&quot;,&quot;target_word&quot;:&quot;poder&quot;,&quot;position&quot;:53,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:141,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;like&quot;,&quot;target_word&quot;:&quot;gustar&quot;,&quot;position&quot;:54,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:142,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;time&quot;,&quot;target_word&quot;:&quot;tiempo&quot;,&quot;position&quot;:55,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:143,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;no&quot;,&quot;target_word&quot;:&quot;no&quot;,&quot;position&quot;:56,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:144,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;just&quot;,&quot;target_word&quot;:&quot;solo&quot;,&quot;position&quot;:57,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:145,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;him&quot;,&quot;target_word&quot;:&quot;\u00e9l&quot;,&quot;position&quot;:58,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:146,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;know&quot;,&quot;target_word&quot;:&quot;saber&quot;,&quot;position&quot;:59,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:147,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;take&quot;,&quot;target_word&quot;:&quot;tomar&quot;,&quot;position&quot;:60,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:148,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;people&quot;,&quot;target_word&quot;:&quot;gente&quot;,&quot;position&quot;:61,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:149,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;into&quot;,&quot;target_word&quot;:&quot;en&quot;,&quot;position&quot;:62,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:150,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;year&quot;,&quot;target_word&quot;:&quot;a\u00f1o&quot;,&quot;position&quot;:63,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:151,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;your&quot;,&quot;target_word&quot;:&quot;tu&quot;,&quot;position&quot;:64,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:152,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;good&quot;,&quot;target_word&quot;:&quot;bueno&quot;,&quot;position&quot;:65,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:153,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;some&quot;,&quot;target_word&quot;:&quot;algunos&quot;,&quot;position&quot;:66,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:154,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;could&quot;,&quot;target_word&quot;:&quot;podr\u00eda&quot;,&quot;position&quot;:67,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:155,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;them&quot;,&quot;target_word&quot;:&quot;ellos&quot;,&quot;position&quot;:68,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:156,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;see&quot;,&quot;target_word&quot;:&quot;ver&quot;,&quot;position&quot;:69,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:157,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;other&quot;,&quot;target_word&quot;:&quot;otro&quot;,&quot;position&quot;:70,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:158,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;than&quot;,&quot;target_word&quot;:&quot;que&quot;,&quot;position&quot;:71,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:159,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;then&quot;,&quot;target_word&quot;:&quot;entonces&quot;,&quot;position&quot;:72,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:160,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;now&quot;,&quot;target_word&quot;:&quot;ahora&quot;,&quot;position&quot;:73,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:161,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;look&quot;,&quot;target_word&quot;:&quot;mirar&quot;,&quot;position&quot;:74,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:162,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;only&quot;,&quot;target_word&quot;:&quot;solo&quot;,&quot;position&quot;:75,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:163,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;come&quot;,&quot;target_word&quot;:&quot;venir&quot;,&quot;position&quot;:76,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:164,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;its&quot;,&quot;target_word&quot;:&quot;su&quot;,&quot;position&quot;:77,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:165,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;over&quot;,&quot;target_word&quot;:&quot;sobre&quot;,&quot;position&quot;:78,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:166,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;think&quot;,&quot;target_word&quot;:&quot;pensar&quot;,&quot;position&quot;:79,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:167,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;also&quot;,&quot;target_word&quot;:&quot;tambi\u00e9n&quot;,&quot;position&quot;:80,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:168,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;back&quot;,&quot;target_word&quot;:&quot;espalda&quot;,&quot;position&quot;:81,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:169,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;after&quot;,&quot;target_word&quot;:&quot;despu\u00e9s&quot;,&quot;position&quot;:82,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:170,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;use&quot;,&quot;target_word&quot;:&quot;usar&quot;,&quot;position&quot;:83,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:171,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;two&quot;,&quot;target_word&quot;:&quot;dos&quot;,&quot;position&quot;:84,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:172,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;how&quot;,&quot;target_word&quot;:&quot;c\u00f3mo&quot;,&quot;position&quot;:85,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:173,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;our&quot;,&quot;target_word&quot;:&quot;nuestro&quot;,&quot;position&quot;:86,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null},{&quot;id&quot;:174,&quot;flashcard_set_id&quot;:3,&quot;source_word&quot;:&quot;work&quot;,&quot;target_word&quot;:&quot;trabajo&quot;,&quot;position&quot;:87,&quot;created_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-06-20T09:07:35.000000Z&quot;,&quot;deleted_at&quot;:null}] })" x-init="init()">
+        <div class="max-w-4xl mx-auto sm:px-6 lg:px-8">
+            <!-- Progress Bar -->
+            <div class="mb-8">
+                <div class="flex justify-between items-center mb-2">
+                    <span class="text-sm font-medium text-gray-700">Progress</span>
+                    <span class="text-sm text-gray-500" x-text="`${currentPosition} / ${totalCards}`"></span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div class="bg-blue-600 h-2 rounded-full transition-all duration-300" 
+                         :style="`width: ${(currentPosition / totalCards) * 100}%`"></div>
+                </div>
+            </div>
+
+            <!-- Completion Message -->
+            <div x-show="completed" x-transition class="mb-8 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded">
+                <div class="flex items-center">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="font-medium">Congratulations! You have completed this set.</span>
+                </div>
+            </div>
+
+            <!-- Flashcard -->
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg mb-8">
+                <div class="p-8">
+                    <div class="flex justify-center">
+                        <div class="w-full max-w-md">
+                            <!-- Card Container -->
+                            <div class="relative perspective-1000 h-64">
+                                <div class="card-container w-full h-full" 
+                                     :class="{ 'flipped': isFlipped }"
+                                     @click="flipCard()"
+                                     style="transform-style: preserve-3d; transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);">
+                                    
+                                    <!-- Front of Card -->
+                                    <div class="card-face front absolute w-full h-full bg-gradient-to-br from-indigo-600 to-indigo-700 rounded-lg shadow-lg flex items-center justify-center cursor-pointer"
+                                         style="backface-visibility: hidden;">
+                                        <div class="text-center text-white">
+                                            <h3 class="text-2xl font-bold mb-2">English</h3>
+                                            <p class="text-4xl font-bold" x-text="currentCard ? currentCard.source_word : 'Loading...'"></p>
+                                            <p class="text-sm mt-4 opacity-75">Click to flip</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Back of Card -->
+                                    <div class="card-face back absolute w-full h-full bg-gradient-to-br from-purple-600 to-purple-700 rounded-lg shadow-lg flex items-center justify-center cursor-pointer"
+                                         style="backface-visibility: hidden; transform: rotateY(180deg);">
+                                        <div class="text-center text-white">
+                                            <h3 class="text-2xl font-bold mb-2">Spanish</h3>
+                                            <p class="text-4xl font-bold" x-text="currentCard ? currentCard.target_word : 'Loading...'"></p>
+                                            <p class="text-sm mt-4 opacity-75">Click to flip back</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Controls -->
+            <div class="flex justify-center space-x-4">
+                <button @click="previousCard()" 
+                        :disabled="currentPosition <= 1"
+                        class="inline-flex items-center px-6 py-3 bg-gray-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition ease-in-out duration-150">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                    Previous
+                </button>
+                
+                <button @click="nextCard()" 
+                        :disabled="completed"
+                        class="inline-flex items-center px-6 py-3 bg-blue-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-blue-700 focus:bg-blue-700 active:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition ease-in-out duration-150">
+                    Next
+                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Keyboard Navigation Info -->
+            <div class="mt-8 text-center text-sm text-gray-500">
+                <p>Use <kbd class="px-2 py-1 bg-gray-200 rounded">←</kbd> and <kbd class="px-2 py-1 bg-gray-200 rounded">→</kbd> arrow keys to navigate, <kbd class="px-2 py-1 bg-gray-200 rounded">Space</kbd> to flip card</p>
+            </div>
+        </div>
+    </div>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        function practiceSession(data) {
+            return {
+                flashcards: data.flashcards,
+                currentCard: null,
+                currentPosition: 1,
+                totalCards: 0,
+                isFlipped: false,
+                completed: false,
+                flashcardSetId: 3,
+
+                init() {
+                    this.totalCards = this.flashcards.length;
+                    if (this.totalCards > 0) {
+                        this.updateCard(); // Set initial card
+                        this.loadCardFromProgress();
+                    }
+                    this.setupKeyboardNavigation();
+                },
+
+                async loadCardFromProgress() {
+                    try {
+                        const response = await fetch("https://laradev2.peterbacsai.com/practice/3/progress");
+                        if (!response.ok) {
+                            throw new Error('No progress found');
+                        }
+                        const data = await response.json();
+                        
+                        this.currentPosition = data.current_position + 1;
+                        this.completed = data.completed;
+                        this.updateCard();
+
+                    } catch (error) {
+                        console.error('Error loading card from progress:', error);
+                        this.currentPosition = 1;
+                        this.updateCard();
+                    }
+                },
+
+                updateCard() {
+                    if (this.currentPosition > this.totalCards) {
+                        this.currentPosition = this.totalCards;
+                    }
+                    if (this.currentPosition < 1) {
+                        this.currentPosition = 1;
+                    }
+                    this.currentCard = this.flashcards[this.currentPosition - 1];
+                    this.isFlipped = false;
+                },
+
+                flipCard() {
+                    this.isFlipped = !this.isFlipped;
+                },
+
+                async nextCard() {
+                    if (this.completed) return;
+                    if (this.currentPosition >= this.totalCards) {
+                        this.completed = true;
+                        this.saveProgress();
+                        return;
+                    }
+
+                    this.currentPosition++;
+                    this.updateCard();
+                    this.saveProgress();
+                },
+
+                async previousCard() {
+                    if (this.currentPosition <= 1) return;
+                    
+                    this.currentPosition--;
+                    this.completed = false; // Not completed if going back
+                    this.updateCard();
+                    this.saveProgress();
+                },
+                
+                async saveProgress() {
+                    try {
+                        await fetch("https://laradev2.peterbacsai.com/practice/3/progress", {
+                            method: 'POST',
+                            headers: {
+                                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify({
+                                current_position: this.currentPosition - 1,
+                                completed: this.completed
+                            })
+                        });
+                    } catch (error) {
+                        console.error('Error saving progress:', error);
+                    }
+                },
+
+                shuffleCards() {
+                    for (let i = this.flashcards.length - 1; i > 0; i--) {
+                        const j = Math.floor(Math.random() * (i + 1));
+                        [this.flashcards[i], this.flashcards[j]] = [this.flashcards[j], this.flashcards[i]];
+                    }
+                    this.restartPractice(false); // Restart without confirmation
+                    // Optionally, you can add a toast notification here
+                },
+
+                async restartPractice(confirmFirst = true) {
+                    if (confirmFirst && !confirm('Are you sure you want to restart this practice session?')) {
+                        return;
+                    }
+
+                    try {
+                        await fetch("https://laradev2.peterbacsai.com/practice/3/restart", {
+                            method: 'POST',
+                            headers: {
+                                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+                                'Content-Type': 'application/json',
+                            },
+                        });
+                        
+                        this.completed = false;
+                        this.currentPosition = 1;
+                        this.updateCard();
+                        this.saveProgress();
+                    } catch (error) {
+                        console.error('Error restarting practice:', error);
+                    }
+                },
+
+                setupKeyboardNavigation() {
+                    document.addEventListener('keydown', (e) => {
+                        switch (e.key) {
+                            case 'ArrowLeft':
+                                e.preventDefault();
+                                this.previousCard();
+                                break;
+                            case 'ArrowRight':
+                                e.preventDefault();
+                                this.nextCard();
+                                break;
+                            case ' ':
+                                e.preventDefault();
+                                this.flipCard();
+                                break;
+                        }
+                    });
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .perspective-1000 {
+            perspective: 1000px;
+        }
+        
+        .card-container.flipped {
+            transform: rotateY(180deg);
+        }
+        
+        .card-face {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+            </main>
+        </div>
+
+        <div 
+    x-data="toast"
+    x-show="visible"
+    x-transition:enter="transition ease-out duration-300"
+    x-transition:enter-start="opacity-0 transform translate-y-2"
+    x-transition:enter-end="opacity-100 transform translate-y-0"
+    x-transition:leave="transition ease-in duration-300"
+    x-transition:leave-start="opacity-100 transform translate-y-0"
+    x-transition:leave-end="opacity-0 transform translate-y-2"
+    @notify.window="show($event.detail)"
+    class="fixed bottom-4 right-4 p-4 rounded-lg shadow-lg text-white"
+    :class="{
+        'bg-green-500': type === 'success',
+        'bg-red-500': type === 'error',
+        'bg-blue-500': type === 'info',
+        'bg-yellow-500': type === 'warning'
+    }"
+    style="display: none;"
+>
+    <div class="flex items-center">
+        <div x-text="message"></div>
+        <button @click="visible = false" class="ml-4 text-white hover:text-gray-200">
+            &times;
+        </button>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('alpine:init', () => {
+        Alpine.data('toast', () => ({
+            visible: false,
+            message: '',
+            type: 'info',
+            timeout: null,
+            show(detail) {
+                this.message = detail.message;
+                this.type = detail.type || 'info';
+                this.visible = true;
+
+                clearTimeout(this.timeout);
+                this.timeout = setTimeout(() => {
+                    this.visible = false;
+                }, 5000);
+            }
+        }))
+    })
+</script>        
+                                        
+        <script>
+            function darkMode() {
+                return {
+                    isDarkMode: localStorage.getItem('darkMode') === 'true',
+                    toggle() {
+                        this.isDarkMode = !this.isDarkMode;
+                        localStorage.setItem('darkMode', this.isDarkMode);
+                        document.documentElement.classList.toggle('dark', this.isDarkMode);
+                    }
+                }
+            }
+        </script>
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"952a732cecae5b8b","version":"2025.6.2","r":1,"token":"24b4ec87e8254a718bf8c37e867fd3c2","serverTiming":{"name":{"cfExtPri":true,"cfEdge":true,"cfOrigin":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}}}' crossorigin="anonymous"></script>
+</body>
+</html>
+ 
