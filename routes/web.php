@@ -43,7 +43,7 @@ Route::middleware('auth')->group(function () {
         Route::post('flashcard-sets/{flashcard_set}/flashcards/bulk-import', [AdminFlashcardController::class, 'bulkImport'])->name('flashcard-sets.flashcards.bulk-import');
 
         // User Management
-        Route::resource('users', \App\Http\Controllers\Admin\UserController::class)->only(['index', 'show']);
+        Route::resource('users', \App\Http\Controllers\Admin\UserController::class)->only(['index', 'show', 'destroy']);
         Route::post('users/{user}/activate', [\App\Http\Controllers\Admin\UserController::class, 'activate'])->name('users.activate');
         Route::post('users/{user}/deactivate', [\App\Http\Controllers\Admin\UserController::class, 'deactivate'])->name('users.deactivate');
     });

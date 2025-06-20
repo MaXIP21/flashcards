@@ -90,6 +90,27 @@
                             </div>
                         </div>
                     </div>
+                    
+                    <!-- Delete User Section -->
+                    @if($user->id !== auth()->id())
+                        <div class="mt-8 pt-6 border-t border-gray-200">
+                            <h3 class="text-lg font-medium text-gray-900 text-red-600">Danger Zone</h3>
+                            <p class="mt-2 text-sm text-gray-600">
+                                Once you delete a user, there is no going back. Please be certain.
+                            </p>
+                            <div class="mt-4">
+                                <form action="{{ route('admin.users.destroy', $user) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" 
+                                            class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500" 
+                                            onclick="return confirm('Are you sure you want to delete this user? This action cannot be undone and will permanently remove all associated data including flashcard sets, assignments, and progress records.')">
+                                        Delete User
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>

@@ -3,9 +3,12 @@
 namespace App\Providers;
 
 use App\Models\FlashcardSet;
+use App\Models\User;
 use App\Observers\FlashcardSetObserver;
+use App\Policies\UserPolicy;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Facades\Gate;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -27,5 +30,8 @@ class AppServiceProvider extends ServiceProvider
         }
         
         FlashcardSet::observe(FlashcardSetObserver::class);
+        
+        // Register User Policy
+        Gate::policy(User::class, UserPolicy::class);
     }
 }

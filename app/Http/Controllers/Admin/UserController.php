@@ -73,9 +73,23 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(User $user): RedirectResponse
     {
-        //
+        // Check if user can delete the target user
+        if (!auth()->user()->can('delete', $user)) {
+            return back()->with('error', 'You are not authorized to delete this user.');
+        }
+
+        // Store user info for logging
+        $userName = $user->name;
+        $userEmail = $user->email;
+        $userRole = $user->role;
+
+        // Delete the user (this will cascade delete related records due to foreign key constraints)
+        $user->delete();
+
+        return redirect()->route('admin.users.index')
+            ->with('success', "User '{$userName}' ({$userEmail}) has been deleted successfully.");
     }
 
     /**

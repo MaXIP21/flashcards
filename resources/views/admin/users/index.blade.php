@@ -82,6 +82,19 @@
                                                 @endif
                                             @endif
                                             <a href="{{ route('admin.users.show', $user) }}" class="text-indigo-600 hover:text-indigo-900 ml-4">View</a>
+                                            
+                                            <!-- Delete Button -->
+                                            @if($user->id !== auth()->id())
+                                                <form action="{{ route('admin.users.destroy', $user) }}" method="POST" class="inline ml-4">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" 
+                                                            class="text-red-600 hover:text-red-900" 
+                                                            onclick="return confirm('Are you sure you want to delete this user? This action cannot be undone and will permanently remove all associated data.')">
+                                                        Delete
+                                                    </button>
+                                                </form>
+                                            @endif
                                         </td>
                                     </tr>
                                 @empty

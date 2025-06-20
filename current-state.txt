@@ -512,3 +512,54 @@
 - Review and refactor as needed.
 
 # Progress: Step 5.9 (except email notification) complete and validated by automated tests.
+
+### 2024-06-20 - Admin User Deletion Feature Implementation
+- **Goal:** Allow administrators to delete users from the admin interface, with proper authorization, safety checks, and cascading deletes.
+
+#### Step 1: Controller Logic
+- Updated `Admin/UserController.php`:
+  - Implemented the `destroy(User $user)` method.
+  - Prevents admins from deleting themselves and from deleting the last admin.
+  - Uses policy authorization for safety.
+  - Deletes the user and redirects with a success message.
+
+#### Step 2: Routes
+- Updated `routes/web.php`:
+  - Added `destroy` to the `users` resource route for admins.
+
+#### Step 3: Views
+- Updated `resources/views/admin/users/index.blade.php`:
+  - Added a delete button to each user row (except for the currently logged-in admin).
+  - Button uses a confirmation dialog and submits a DELETE request.
+- Updated `resources/views/admin/users/show.blade.php`:
+  - Added a "Danger Zone" section with a delete button at the bottom of the user details page.
+
+#### Step 4: Policy
+- Created `app/Policies/UserPolicy.php`:
+  - Only admins can delete users.
+  - Admins cannot delete themselves or the last admin.
+- Registered the policy in `AppServiceProvider`.
+- Updated `UserController@destroy` to use the policy for authorization.
+
+#### Step 5: Tests
+- Created `tests/Feature/AdminUserDeletionTest.php`:
+  - Tests admin can delete users (student, teacher).
+  - Tests admin cannot delete themselves or the last admin.
+  - Tests non-admins (teacher, student, guest) cannot delete users.
+  - Tests deleting a user cascades and deletes related flashcard sets and flashcards.
+- Fixed test to use correct flashcard field names (`source_word`, `target_word`).
+- All tests pass successfully (8/8).
+
+#### Step 6: Manual Verification
+- Delete button appears in admin user list and user details.
+- Confirmation dialog shown before deletion.
+- Success/error messages shown as appropriate.
+- Deleting a user removes all their data (cascading delete).
+- Policy prevents dangerous actions (self-delete, last admin delete).
+
+#### Next Steps
+- [ ] Deploy to production after review.
+- [ ] Consider adding audit logging for deletions (optional).
+- [ ] Notify users by email if their account is deleted (optional).
+
+**Status:** Admin user deletion feature implemented, tested, and ready for review.
