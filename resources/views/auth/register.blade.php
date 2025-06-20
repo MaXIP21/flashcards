@@ -25,6 +25,19 @@
                 <option value="teacher" {{ old('role') == 'teacher' ? 'selected' : '' }}>Teacher</option>
             </select>
             <x-input-error :messages="$errors->get('role')" class="mt-2" />
+            
+            <!-- Teacher Activation Notice -->
+            <div id="teacher-notice" class="mt-2 p-3 bg-blue-50 border border-blue-200 rounded-md text-sm text-blue-700" style="display: none;">
+                <div class="flex items-start">
+                    <svg class="h-4 w-4 text-blue-500 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
+                    </svg>
+                    <div>
+                        <p class="font-medium">Teacher accounts require activation</p>
+                        <p class="text-blue-600 mt-1">After registration, your account will be reviewed by an administrator. You'll receive an email notification once activated.</p>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- Password -->
@@ -60,4 +73,21 @@
             </x-primary-button>
         </div>
     </form>
+
+    <script>
+        // Show/hide teacher activation notice based on role selection
+        document.getElementById('role').addEventListener('change', function() {
+            const teacherNotice = document.getElementById('teacher-notice');
+            if (this.value === 'teacher') {
+                teacherNotice.style.display = 'block';
+            } else {
+                teacherNotice.style.display = 'none';
+            }
+        });
+
+        // Show notice if teacher is pre-selected (e.g., from form validation errors)
+        if (document.getElementById('role').value === 'teacher') {
+            document.getElementById('teacher-notice').style.display = 'block';
+        }
+    </script>
 </x-guest-layout>

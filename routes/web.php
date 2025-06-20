@@ -28,15 +28,28 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
+    // Activation pending route - redirect activated teachers
+    Route::get('/activation-pending', function () {
+        if (auth()->user()->isTeacher() && auth()->user()->is_activated) {
+            return redirect()->route('dashboard');
+        }
+        return view('auth.activation-pending');
+    })->name('activation.pending');
+
     // Admin routes
     Route::middleware(['role:admin'])->prefix('admin')->name('admin.')->group(function () {
         Route::resource('flashcard-sets', AdminFlashcardSetController::class);
         Route::resource('flashcard-sets.flashcards', AdminFlashcardController::class);
         Route::post('flashcard-sets/{flashcard_set}/flashcards/bulk-import', [AdminFlashcardController::class, 'bulkImport'])->name('flashcard-sets.flashcards.bulk-import');
+
+        // User Management
+        Route::resource('users', \App\Http\Controllers\Admin\UserController::class)->only(['index', 'show']);
+        Route::post('users/{user}/activate', [\App\Http\Controllers\Admin\UserController::class, 'activate'])->name('users.activate');
+        Route::post('users/{user}/deactivate', [\App\Http\Controllers\Admin\UserController::class, 'deactivate'])->name('users.deactivate');
     });
 
-    // Teacher routes
-    Route::middleware(['role:teacher'])->prefix('teacher')->name('teacher.')->group(function () {
+    // Teacher routes (require activation)
+    Route::middleware(['role:teacher', 'teacher.activated'])->prefix('teacher')->name('teacher.')->group(function () {
         Route::resource('flashcard-sets', TeacherFlashcardSetController::class);
         Route::resource('flashcard-sets.flashcards', TeacherFlashcardController::class)->except(['show']);
         Route::post('flashcard-sets/{flashcard_set}/flashcards/bulk-import', [TeacherFlashcardController::class, 'bulkImport'])->name('flashcard-sets.flashcards.bulk-import');

@@ -46,3 +46,20 @@ it was in the line app/Http/Controllers/Teacher/AssignmentController.php :19
 
 can you check and fix the errors
 ```
+
+
+```
+The shuffle and restart button in authenticated preview mode is still not working can you check what could be the issue. Also please this bug to a new bug list at the end of the current-state.txt 
+```
+
+```
+The shuffle and restart button in authenticated preview mode is still not working can you check what could be the issue. Also please this bug to a new bug list at the end of the current-state.txt 
+```
+
+```
+Can you please continue with the implementation of the remaining tasks in Phase 5 from current-state.txt, please log all the progress into current-state.txt the log should be enough to continue the implementation in case the process stops. 
+```
+
+```
+can you implement the tests except the email notification  from Step 5.9 the current-state.txt , please log all the progress into current-state.txt the log should be enough to continue the implementation in case the process stops.
+```

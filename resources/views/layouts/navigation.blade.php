@@ -15,6 +15,15 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+
+                    @if(auth()->user()->isAdmin())
+                        <x-nav-link :href="route('admin.flashcard-sets.index')" :active="request()->routeIs('admin.flashcard-sets.*')">
+                            {{ __('Manage Sets (Admin)') }}
+                        </x-nav-link>
+                        <x-nav-link :href="route('admin.users.index')" :active="request()->routeIs('admin.users.*')">
+                            {{ __('Manage Users') }}
+                        </x-nav-link>
+                    @endif
                 </div>
             </div>
 
@@ -81,6 +90,19 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
+
+            @if(auth()->user()->isAdmin())
+                <x-responsive-nav-link :href="route('admin.flashcard-sets.index')" :active="request()->routeIs('admin.flashcard-sets.*')">
+                    {{ __('Manage Sets (Admin)') }}
+                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('admin.users.index')" :active="request()->routeIs('admin.users.*')">
+                    {{ __('Manage Users') }}
+                </x-responsive-nav-link>
+            @endif
+
+            @if(auth()->user()->isTeacher())
+                <!-- ... existing code ... -->
+            @endif
         </div>
 
         <!-- Responsive Settings Options -->

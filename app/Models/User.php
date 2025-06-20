@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -23,6 +24,9 @@ class User extends Authenticatable
         'email',
         'password',
         'role',
+        'is_activated',
+        'activated_at',
+        'activated_by',
     ];
 
     /**
@@ -46,7 +50,24 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
             'role' => 'string',
+            'is_activated' => 'boolean',
+            'activated_at' => 'datetime',
         ];
+    }
+
+    /**
+     * Boot the model and add event listeners.
+     */
+    protected static function boot()
+    {
+        parent::boot();
+
+        // Set default activation status based on role
+        static::creating(function ($user) {
+            if (!isset($user->is_activated)) {
+                $user->is_activated = $user->role !== 'teacher';
+            }
+        });
     }
 
     /**
@@ -79,6 +100,22 @@ class User extends Authenticatable
     public function progress(): HasMany
     {
         return $this->hasMany(UserProgress::class);
+    }
+
+    /**
+     * Get the admin who activated this user.
+     */
+    public function activatedBy(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'activated_by');
+    }
+
+    /**
+     * Get the users activated by this admin.
+     */
+    public function activatedUsers(): HasMany
+    {
+        return $this->hasMany(User::class, 'activated_by');
     }
 
     /**
@@ -119,5 +156,49 @@ class User extends Authenticatable
     public function hasAnyRole(array $roles): bool
     {
         return in_array($this->role, $roles);
+    }
+
+    /**
+     * Check if user is activated.
+     */
+    public function isActivated(): bool
+    {
+        return $this->is_activated;
+    }
+
+    /**
+     * Activate the user.
+     */
+    public function activate(User $admin = null): bool
+    {
+        $this->update([
+            'is_activated' => true,
+            'activated_at' => now(),
+            'activated_by' => $admin?->id,
+        ]);
+
+        return true;
+    }
+
+    /**
+     * Deactivate the user.
+     */
+    public function deactivate(): bool
+    {
+        $this->update([
+            'is_activated' => false,
+            'activated_at' => null,
+            'activated_by' => null,
+        ]);
+
+        return true;
+    }
+
+    /**
+     * Check if user can access teacher features.
+     */
+    public function canAccessTeacherFeatures(): bool
+    {
+        return $this->isTeacher() && $this->isActivated();
     }
 }
