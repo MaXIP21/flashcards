@@ -51,8 +51,7 @@
         </header>
         <!-- Banner and Welcome Message -->
         <div class="w-full flex flex-col items-center mb-8">
-            <!-- Logo -->
-            <img src="/images/banner.png" alt="Logo" class="w-auto max-w-[200px] h-auto mb-6">
+        <img src="/images/banner.png" alt="Logo" class="w-auto max-w-[400px] h-auto mb-6">
             <h1 class="text-4xl font-bold text-center text-[#1b1b18] dark:text-[#EDEDEC] drop-shadow mb-2">Welcome to the Flashcard Learning Platform</h1>
             <p class="text-lg text-center text-[#706f6c] dark:text-[#A1A09A] mb-2">Master your knowledge with interactive flashcards, assignments, and progress tracking.</p>
         </div>
