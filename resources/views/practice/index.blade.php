@@ -4,25 +4,27 @@
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 {{ __('Practice') }}: {{ $flashcardSet->title }}
             </h2>
-            <div class="space-x-2">
+            <form action="{{ route('practice.exit', $flashcardSet) }}" method="POST" class="inline-block">
+                @csrf
+                <button type="submit" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150">
+                    {{ __('Exit') }}
+                </button>
+            </form>
+        </div>
+    </x-slot>
+
+    <div class="py-12" x-data="practiceSession({ flashcards: {{ json_encode($flashcards) }} })" x-init="init()" @keydown.window.arrow-right="nextCard()" @keydown.window.arrow-left="previousCard()" @keydown.window.space.prevent="flipCard()">
+        <div class="max-w-4xl mx-auto sm:px-6 lg:px-8">
+            <!-- Practice Controls -->
+            <div class="mb-6 flex justify-end space-x-2">
                 <button @click="shuffleCards()" class="inline-flex items-center px-4 py-2 bg-blue-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-blue-700 focus:bg-blue-700 active:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition ease-in-out duration-150">
                     {{ __('Shuffle') }}
                 </button>
                 <button @click="restartPractice()" class="inline-flex items-center px-4 py-2 bg-yellow-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-yellow-700 focus:bg-yellow-700 active:bg-yellow-800 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 transition ease-in-out duration-150">
                     {{ __('Restart') }}
                 </button>
-                <form action="{{ route('practice.exit', $flashcardSet) }}" method="POST" class="inline-block">
-                    @csrf
-                    <button type="submit" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150">
-                        {{ __('Exit') }}
-                    </button>
-                </form>
             </div>
-        </div>
-    </x-slot>
 
-    <div class="py-12" x-data="practiceSession({ flashcards: {{ json_encode($flashcards) }} })" x-init="init()">
-        <div class="max-w-4xl mx-auto sm:px-6 lg:px-8">
             <!-- Progress Bar -->
             <div class="mb-8">
                 <div class="flex justify-between items-center mb-2">
@@ -131,7 +133,6 @@
                         this.updateCard(); // Set initial card
                         this.loadCardFromProgress();
                     }
-                    this.setupKeyboardNavigation();
                 },
 
                 async loadCardFromProgress() {
@@ -238,25 +239,6 @@
                     } catch (error) {
                         console.error('Error restarting practice:', error);
                     }
-                },
-
-                setupKeyboardNavigation() {
-                    document.addEventListener('keydown', (e) => {
-                        switch (e.key) {
-                            case 'ArrowLeft':
-                                e.preventDefault();
-                                this.previousCard();
-                                break;
-                            case 'ArrowRight':
-                                e.preventDefault();
-                                this.nextCard();
-                                break;
-                            case ' ':
-                                e.preventDefault();
-                                this.flipCard();
-                                break;
-                        }
-                    });
                 }
             }
         }
