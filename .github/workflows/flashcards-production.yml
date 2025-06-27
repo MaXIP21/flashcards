@@ -1,8 +1,8 @@
-name: Production Build (v1)
+name: Production Build (main)
 
 on:
   push:
-    branches: ["v1"]
+    branches: ["main"]
     paths-ignore:
       - CHANGELOG.md
 
