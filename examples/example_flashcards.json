@@ -1,0 +1,82 @@
+[
+  {
+    "source": "Hello",
+    "target": "Hola"
+  },
+  {
+    "source": "Goodbye",
+    "target": "Adios"
+  },
+  {
+    "source": "Thank you",
+    "target": "Gracias"
+  },
+  {
+    "source": "Please",
+    "target": "Por favor"
+  },
+  {
+    "source": "Yes",
+    "target": "Sí"
+  },
+  {
+    "source": "No",
+    "target": "No"
+  },
+  {
+    "source": "Water",
+    "target": "Agua"
+  },
+  {
+    "source": "Food",
+    "target": "Comida"
+  },
+  {
+    "source": "House",
+    "target": "Casa"
+  },
+  {
+    "source": "Car",
+    "target": "Coche"
+  },
+  {
+    "source": "Book",
+    "target": "Libro"
+  },
+  {
+    "source": "Time",
+    "target": "Tiempo"
+  },
+  {
+    "source": "Day",
+    "target": "Día"
+  },
+  {
+    "source": "Night",
+    "target": "Noche"
+  },
+  {
+    "source": "Friend",
+    "target": "Amigo"
+  },
+  {
+    "source": "Family",
+    "target": "Familia"
+  },
+  {
+    "source": "Work",
+    "target": "Trabajo"
+  },
+  {
+    "source": "School",
+    "target": "Escuela"
+  },
+  {
+    "source": "City",
+    "target": "Ciudad"
+  },
+  {
+    "source": "Country",
+    "target": "País"
+  }
+] 

@@ -1,0 +1,82 @@
+[
+  {
+    "source_word": "Hello",
+    "target_word": "Hola"
+  },
+  {
+    "source_word": "Goodbye",
+    "target_word": "Adios"
+  },
+  {
+    "source_word": "Thank you",
+    "target_word": "Gracias"
+  },
+  {
+    "source_word": "Please",
+    "target_word": "Por favor"
+  },
+  {
+    "source_word": "Yes",
+    "target_word": "Sí"
+  },
+  {
+    "source_word": "No",
+    "target_word": "No"
+  },
+  {
+    "source_word": "Water",
+    "target_word": "Agua"
+  },
+  {
+    "source_word": "Food",
+    "target_word": "Comida"
+  },
+  {
+    "source_word": "House",
+    "target_word": "Casa"
+  },
+  {
+    "source_word": "Car",
+    "target_word": "Coche"
+  },
+  {
+    "source_word": "Book",
+    "target_word": "Libro"
+  },
+  {
+    "source_word": "Time",
+    "target_word": "Tiempo"
+  },
+  {
+    "source_word": "Day",
+    "target_word": "Día"
+  },
+  {
+    "source_word": "Night",
+    "target_word": "Noche"
+  },
+  {
+    "source_word": "Friend",
+    "target_word": "Amigo"
+  },
+  {
+    "source_word": "Family",
+    "target_word": "Familia"
+  },
+  {
+    "source_word": "Work",
+    "target_word": "Trabajo"
+  },
+  {
+    "source_word": "School",
+    "target_word": "Escuela"
+  },
+  {
+    "source_word": "City",
+    "target_word": "Ciudad"
+  },
+  {
+    "source_word": "Country",
+    "target_word": "País"
+  }
+] 
