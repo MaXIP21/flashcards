@@ -37,7 +37,7 @@ USER www-data
 FROM node:24-alpine AS static-assets
 
 WORKDIR /app
-COPY package*.json vite.config.js ./ #postcss.config.cjs ./
+COPY package*.json vite.config.js ./
 RUN npm ci
 COPY . .
 RUN npm run build
