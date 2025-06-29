@@ -2,18 +2,14 @@
 
 # Use with-contenv to ensure environment variables are available
 with-contenv
-if { test "${HORIZON_ENABLED}" = "true" }
+if { test "${SCHEDULER_ENABLED}" = "true" }
 foreground {
     cd /var/www/html
     php
     artisan
-    queue:work
-    --sleep=3
-    --tries=3
-    --max-time=3600
+    schedule:work
 }
 ifnot {
-    # If horizon is disabled, just exit gracefully
+    # If scheduler is disabled, just exit gracefully
     exit 0
-}
-
+} 

@@ -6,7 +6,17 @@ cd /var/www/html
 foreground {
     php
     artisan
-    app:init
+    config:cache
+}
+foreground {
+    php
+    artisan
+    route:cache
+}
+foreground {
+    php
+    artisan
+    view:cache
 }
 
 

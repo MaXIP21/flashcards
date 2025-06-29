@@ -2,10 +2,16 @@
 
 # Use with-contenv to ensure environment variables are available
 with-contenv
-cd /var/www/html
+if { test "${MIGRATION_ENABLED}" = "true" }
 foreground {
+    cd /var/www/html
     php
     artisan
-    start:migration
+    migrate
+    --force
+}
+ifnot {
+    # If migration is disabled, just exit gracefully
+    exit 0
 }
 
